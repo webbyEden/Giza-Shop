@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giza Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #FAF1F5;
+        }
+        .star-pattern {
+            background-color: #FFF8FA;
+            background-image: radial-gradient(#F3D4E2 1.25px, transparent 1.25px), radial-gradient(#F3D4E2 1.25px, #FFF8FA 1.25px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .text-outline {
+            text-shadow: 
+                -1px -1px 0 #fff,  
+                 1px -1px 0 #fff,
+                -1px  1px 0 #fff,
+                 1px  1px 0 #fff,
+                -2px -2px 0 #fff,  
+                 2px -2px 0 #fff,
+                -2px  2px 0 #fff,
+                 2px  2px 0 #fff;
+        }
+        .text-outline-pink {
+            text-shadow: 
+                -1px -1px 0 #FBE8EE,  
+                 1px -1px 0 #FBE8EE,
+                -1px  1px 0 #FBE8EE,
+                 1px  1px 0 #FBE8EE;
+        }
+    </style>
+</head>
+<body class="flex justify-center min-h-screen text-[#7d5658]">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-[#FBE8EE] text-[#7d5658] px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 opacity-0 pointer-events-none text-sm font-bold">
+        คัดลอกข้อความสำเร็จ!
+    </div>
+
+    <!-- Main Container with Pure CSS Star Pattern Background -->
+    <div class="w-full max-w-[480px] star-pattern min-h-screen flex flex-col items-center pb-12 shadow-2xl relative overflow-hidden">
+
+        <!-- Top Header Links Bar -->
+        <div class="w-full px-6 pt-5 pb-3 flex justify-between items-center gap-2 text-xs sm:text-sm font-extrabold">
+            <!-- Facebook Button -->
+            <a href="https://www.facebook.com/share/1EGD7YvSR3/?mibextid=wwXIfr" target="_blank" class="flex-1 bg-[#FFFBFC] hover:bg-[#FBE8EE] text-[#7d5658] py-1.5 rounded-full shadow-sm border border-[#FBE8EE] flex items-center justify-center transition-transform active:scale-95 text-center">
+                facebook
+            </a>
+            <!-- Line Link Button -->
+            <a href="https://lin.ee/rZfFiD0" target="_blank" class="flex-1 bg-[#FFFBFC] hover:bg-[#FBE8EE] text-[#7d5658] py-1.5 rounded-full shadow-sm border border-[#FBE8EE] flex items-center justify-center transition-transform active:scale-95 text-center">
+                Line
+            </a>
+            <!-- Instagram Button -->
+            <a href="https://www.instagram.com/gizashop_7?obrf=MWdsczJlb2dtbGJ5eg%3D%3D&utm_source=qr" target="_blank" class="flex-1 bg-[#FFFBFC] hover:bg-[#FBE8EE] text-[#7d5658] py-1.5 rounded-full shadow-sm border border-[#FBE8EE] flex items-center justify-center transition-transform active:scale-95 text-center">
+                Instagram
+            </a>
+        </div>
+
+        <!-- Profile Cover & Avatar Section -->
+        <div class="w-full px-6 mt-1">
+            <div class="w-full bg-[#FBE8EE] rounded-3xl h-48 relative flex flex-col items-center justify-end pb-4 shadow-inner overflow-visible">
+                <div class="absolute inset-0 w-full h-full rounded-3xl overflow-hidden pointer-events-none">
+                    <img src="https://i.ibb.co/846H1DBm/IMG-5718.jpg" alt="Cover Background" class="w-full h-full object-cover opacity-90">
+                </div>
+                <!-- Center Circular Avatar with Frame Overlay -->
+                <div class="absolute -bottom-10 w-32 h-32 rounded-full bg-[#FFFBFC] border-4 border-[#FFFBFC] shadow-md overflow-visible flex items-center justify-center z-30">
+                    <img src="https://i.ibb.co/W4D7LrNh/line-oa-chat-261114-002619.jpg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                    <!-- Profile Frame Overlay -->
+                    <img src="https://i.ibb.co/w8ncQ6X/63-20261113165013.png" alt="Profile Frame" class="absolute -inset-6 w-[calc(100%+52px)] h-[calc(100%+52px)] max-w-none object-contain pointer-events-none z-40 transform -translate-x-2.5 -translate-y-4">
+                </div>
+            </div>
+        </div>
+
+        <!-- Gizashop Title Heading -->
+        <div class="mt-14 mb-4 text-center">
+            <h1 class="text-3xl font-pacifico text-[#f49ac2] tracking-wider text-outline">Giza Shop</h1>
+        </div>
+
+        <!-- Middle Section: QR Code Card & Payment Info Cards -->
+        <div class="w-full px-6 flex flex-col gap-3.5">
+            <!-- Row 1: QR Code Box (Left) & K Plus Account (Right) -->
+            <div class="flex gap-3.5 items-stretch">
+                <!-- Left Box: QR Code Image with Custom Frame Overlay -->
+                <div class="w-[44%] bg-[#FBE8EE] rounded-2xl p-3 flex flex-col justify-between items-center shadow-md relative overflow-visible">
+                    <div class="w-full aspect-square bg-[#FFFEFE] rounded-xl flex items-center justify-center overflow-visible border border-[#FFFBFC] shadow-sm relative my-auto">
+                        <img src="https://i.ibb.co/6ctSxdJm/Untitled-Artwork29-20261114010753.png" alt="QR Code" class="w-[82%] h-[82%] object-contain rounded-xl border-[#FFFBFC] border-4 shadow-sm">
+                        <!-- Custom QR Frame Overlay -->
+                        <img src="https://i.ibb.co/zWpbB1Kj/Untitled-Artwork29-20261114161029.png" alt="QR Frame" class="absolute -inset-14 w-[calc(100%+112px)] h-[calc(100%+112px)] max-w-none object-contain pointer-events-none z-20 transform translate-x-1.5 -translate-y-2">
+                    </div>
+                </div>
+
+                <!-- Right Side: Bank Cards Stack -->
+                <div class="w-[56%] flex flex-col gap-3 justify-between">
+                    <!-- Krungthai Card -->
+                    <div class="bg-[#FFFEFE] rounded-2xl p-3 shadow-sm border border-[#FAF1F5] flex flex-col justify-between flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <div class="flex items-center gap-2">
+                                <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center overflow-hidden shrink-0">
+                                    <img src="https://i.ibb.co/bj3YnC33/F381-BD2-C-BDA0-484-C-BD43-A1-D141954-E45.gif" alt="Icon" class="w-full h-full object-contain">
+                                </div>
+                                <span class="font-bold text-xs text-[#7d5658]">krungthai</span>
+                            </div>
+                            <button onclick="copyText('214-8-72002-1')" class="bg-[#FAF1F5] hover:bg-[#FBE8EE] text-[#7d5658] text-[10px] font-bold px-2 py-1 rounded-full shadow-sm flex items-center gap-1 transition-all active:scale-95 whitespace-nowrap">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                คัดลอก
+                            </button>
+                        </div>
+                        <div class="text-center font-extrabold text-sm text-[#7d5658] tracking-wider py-1 bg-[#FFFBFC] rounded-lg select-all">
+                            214-8-72002-1
+                        </div>
+                    </div>
+
+                    <!-- PromptPay Card -->
+                    <div class="bg-[#FFFEFE] rounded-2xl p-3 shadow-sm border border-[#FAF1F5] flex flex-col justify-between flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <div class="flex items-center gap-2">
+                                <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center overflow-hidden shrink-0">
+                                    <img src="https://i.ibb.co/bj3YnC33/F381-BD2-C-BDA0-484-C-BD43-A1-D141954-E45.gif" alt="Icon" class="w-full h-full object-contain">
+                                </div>
+                                <span class="font-bold text-xs text-[#7d5658]">promptpay</span>
+                            </div>
+                            <button onclick="copyText('0645352683')" class="bg-[#FAF1F5] hover:bg-[#FBE8EE] text-[#7d5658] text-[10px] font-bold px-2 py-1 rounded-full shadow-sm flex items-center gap-1 transition-all active:scale-95 whitespace-nowrap">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                คัดลอก
+                            </button>
+                        </div>
+                        <div class="text-center font-extrabold text-sm text-[#7d5658] tracking-wider py-1 bg-[#FFFBFC] rounded-lg select-all">
+                            0645352683
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Bottom Box (Left) & Wallet Card (Right) -->
+            <div class="flex gap-3.5 items-stretch">
+                <!-- Left Column: Account Name Format & Download QR Button stacked -->
+                <div class="w-[44%] flex flex-col justify-between gap-2">
+                    <div class="w-full py-1 flex items-center justify-center text-[#7d5658] text-[11px] font-bold px-1 text-center select-all flex-wrap gap-1 my-auto">
+                        <span>ชื่อบัญชี</span> <span class="bg-[#FBE8EE] text-[#7d5658] px-2 py-0.5 rounded-full shadow-sm text-xs font-bold">นนธิณี ใจมั่น</span>
+                    </div>
+                    
+                    <!-- Download QR Code Button -->
+                    <button onclick="downloadQRImage()" class="w-full bg-[#FAF1F5] hover:bg-[#FBE8EE] text-[#7d5658] font-bold py-2.5 px-3 rounded-full shadow-sm border border-[#FBE8EE] flex items-center justify-center gap-1 text-[11px] sm:text-xs transition-all active:scale-95 text-center leading-tight">
+                        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        บันทึกรูปเพื่อสแกนชำระเงิน
+                    </button>
+                </div>
+                
+                <!-- Right Side: Wallet Card -->
+                <div class="w-[56%] bg-[#FFFEFE] rounded-2xl p-3 shadow-sm border border-[#FAF1F5] flex flex-col justify-between">
+                    <div class="flex justify-between items-center mb-1">
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="https://i.ibb.co/bj3YnC33/F381-BD2-C-BDA0-484-C-BD43-A1-D141954-E45.gif" alt="Icon" class="w-full h-full object-contain">
+                            </div>
+                            <span class="font-bold text-xs text-[#7d5658]">wallet</span>
+                        </div>
+                        <button onclick="copyText('0645352683')" class="bg-[#FAF1F5] hover:bg-[#FBE8EE] text-[#7d5658] text-[10px] font-bold px-2 py-1 rounded-full shadow-sm flex items-center gap-1 transition-all active:scale-95 whitespace-nowrap">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            คัดลอก
+                        </button>
+                    </div>
+                    <div class="text-center font-extrabold text-sm text-[#7d5658] tracking-wider py-1 bg-[#FFFBFC] rounded-lg select-all">
+                        0645352683
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashed Separator Line -->
+        <div class="w-full my-4">
+            <img src="https://i.ibb.co/rGrK8JZ8/14-D584-F3-6175-4012-8419-98-A304-FB0-AC8.gif" alt="Divider" class="w-full h-auto object-cover border-0 shadow-none">
+        </div>
+
+        <!-- Review Prompt Banner with Side Images (Visible Overflow) -->
+        <div class="w-full px-6 mb-4 flex items-center justify-center gap-1 relative overflow-visible">
+            <img src="https://i.ibb.co/tTBqDv6v/63-20261114161312.png" alt="Side Deco" class="w-20 h-20 object-contain shrink-0 z-10 -mr-3">
+            <div class="flex-1 bg-[#FFFEFE]/90 border border-[#FAF1F5] rounded-full py-2.5 px-4 text-center text-xs sm:text-sm text-[#7d5658] font-medium shadow-sm flex items-center justify-center gap-2 z-0">
+                ลูกค้ารีวิวให้เค้าหน่อยน้า ♡
+            </div>
+            <img src="https://i.ibb.co/tTBqDv6v/63-20261114161312.png" alt="Side Deco" class="w-20 h-20 object-contain shrink-0 transform scale-x-[-1] z-10 -ml-3">
+        </div>
+
+        <!-- Review Submission & Image Section -->
+        <div class="w-full px-6 flex gap-3.5 mb-8">
+            <!-- Left: Review Form -->
+            <form id="reviewForm" onsubmit="submitReview(event)" class="w-[62%] bg-[#FFFEFE] rounded-3xl p-4 shadow-sm border border-[#FAF1F5] flex flex-col gap-3">
+                <!-- Name Input -->
+                <input type="text" id="reviewerName" placeholder="ชื่อของคุณ" required class="w-full bg-[#FFFBFC] border border-[#FAF1F5] rounded-xl px-3.5 py-2 text-xs text-[#7d5658] focus:outline-none focus:ring-2 focus:ring-[#FBE8EE] placeholder-slate-400">
+
+                <!-- Star Rating Prompt & Selector -->
+                <div class="text-center">
+                    <p class="text-[11px] text-[#7d5658]/70 mb-1">กดที่นี่เพื่อให้คะแนน</p>
+                    <div id="starContainer" class="flex justify-center gap-1.5 cursor-pointer text-xl text-slate-300">
+                        <span onclick="setRating(1)" class="transition-colors hover:text-amber-400" data-value="1">★</span>
+                        <span onclick="setRating(2)" class="transition-colors hover:text-amber-400" data-value="2">★</span>
+                        <span onclick="setRating(3)" class="transition-colors hover:text-amber-400" data-value="3">★</span>
+                        <span onclick="setRating(4)" class="transition-colors hover:text-amber-400" data-value="4">★</span>
+                        <span onclick="setRating(5)" class="transition-colors hover:text-amber-400" data-value="5">★</span>
+                    </div>
+                </div>
+
+                <!-- Review Textarea -->
+                <textarea id="reviewerComment" rows="3" placeholder="เล่าให้ฟังหน่อยว่าเป็นยังไงบ้างคะ" required class="w-full bg-[#FFFBFC] border border-[#FAF1F5] rounded-xl p-3 text-xs text-[#7d5658] focus:outline-none focus:ring-2 focus:ring-[#FBE8EE] placeholder-slate-400 resize-none"></textarea>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-[#FAF1F5] hover:bg-[#FBE8EE] text-[#7d5658] font-bold py-2 rounded-full shadow-sm text-xs transition-all active:scale-95 text-center">
+                    ส่งรีวิว
+                </button>
+            </form>
+
+            <!-- Right: Image Box -->
+            <div class="w-[38%] bg-[#FAF1F5] border border-[#FBE8EE] rounded-3xl overflow-hidden shadow-md relative flex items-center justify-center min-h-[220px]">
+                <img src="https://i.ibb.co/FbK03tM8/IMG-5763.jpg" alt="Decoration" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Customer Reviews Header -->
+        <div class="w-full px-6 mb-4 flex justify-between items-center">
+            <div>
+                <h2 class="text-xs sm:text-sm font-bold text-[#7d5658]">รีวิวจากลูกค้าที่ใช้บริการ</h2>
+                <div class="flex items-center gap-2 mt-0.5">
+                    <span id="avgRatingText" class="text-xs font-bold text-amber-500">★ 5.0</span>
+                    <span class="text-[11px] text-[#7d5658]/70" id="totalReviewsText">(0 รีวิว)</span>
+                </div>
+            </div>
+            <span class="text-xs text-[#7d5658]"> ꒰ᐢ. .ᐢ꒱₊˚ </span>
+        </div>
+
+        <!-- Reviews List Container with Scrollable Box -->
+        <div class="w-full px-6 mb-8">
+            <div id="reviewsList" class="w-full max-h-[360px] overflow-y-auto pr-1 flex flex-col gap-3.5 scrollbar-thin scrollbar-thumb-[#FBE8EE]">
+                <!-- Reviews will be loaded dynamically here -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        let currentRating = 5;
+        let db;
+        let auth;
+        let appId = typeof __app_id !== 'undefined' ? __app_id : 'giza-shop-app';
+
+        // Initialize Firebase on load
+        window.addEventListener('DOMContentLoaded', async () => {
+            setRating(5);
+            try {
+                if (typeof __firebase_config !== 'undefined') {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    
+                    initFirestoreListener();
+                } else {
+                    // Fallback local initial reviews if offline/no firebase
+                    loadDefaultReviews();
+                }
+            } catch (e) {
+                console.error("Firebase init error:", e);
+                loadDefaultReviews();
+            }
+        });
+
+        // Listen to Firestore reviews in real-time
+        function initFirestoreListener() {
+            if (!db) return;
+            const reviewsRef = collection(db, 'artifacts', appId, 'public', 'data', 'customer_reviews');
+            onSnapshot(reviewsRef, (snapshot) => {
+                const reviews = [];
+                snapshot.forEach(doc => {
+                    reviews.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Sort by timestamp descending (newest first)
+                reviews.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+                renderReviews(reviews);
+            }, (error) => {
+                console.error("Firestore snapshot error:", error);
+                loadDefaultReviews();
+            });
+        }
+
+        function loadDefaultReviews() {
+            const defaultReviews = [
+                { name: 'คุณมินต์ (Mind)', rating: 5, comment: 'งานสวยไวมากเลยค่ะ ตรงเรฟสุดๆ ประทับใจมากค่า ไว้มาอุดหนุนอีกแน่นอนค่ะ', createdAt: Date.now() - 2000 },
+                { name: 'คุณพลอย (Ploy)', rating: 5, comment: 'แม่ค้าน่ารักเป็นกันเอง งานเนียบละเอียดมากค่ะ แนะนำนะค่ะร้านนี้', createdAt: Date.now() - 1000 }
+            ];
+            renderReviews(defaultReviews);
+        }
+
+        function renderReviews(reviews) {
+            const reviewsList = document.getElementById('reviewsList');
+            reviewsList.innerHTML = '';
+
+            let sum = 0;
+            reviews.forEach(review => {
+                sum += parseInt(review.rating || 5, 10);
+                const starsHtml = '★'.repeat(parseInt(review.rating)) + '☆'.repeat(5 - parseInt(review.rating));
+
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'bg-[#FFFEFE] rounded-3xl p-4 shadow-sm border border-[#FAF1F5] flex flex-col gap-2';
+                reviewCard.setAttribute('data-rating', review.rating);
+                reviewCard.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-xs text-[#7d5658]">${escapeHtml(review.name)}</span>
+                        <div class="text-amber-400 text-sm">${starsHtml}</div>
+                    </div>
+                    <p class="text-xs text-[#7d5658] leading-relaxed">${escapeHtml(review.comment)}</p>
+                `;
+                reviewsList.appendChild(reviewCard);
+            });
+
+            const total = reviews.length;
+            const avg = total > 0 ? (sum / total).toFixed(1) : '5.0';
+            document.getElementById('totalReviewsText').innerText = `(${total} รีวิว)`;
+            document.getElementById('avgRatingText').innerText = `★ ${avg}`;
+        }
+
+        // Make submitReview globally available
+        window.submitReview = async function(event) {
+            event.preventDefault();
+            const name = document.getElementById('reviewerName').value.trim();
+            const comment = document.getElementById('reviewerComment').value.trim();
+
+            if (!name || !comment) return;
+
+            const newReview = {
+                name: name,
+                rating: currentRating,
+                comment: comment,
+                createdAt: Date.now()
+            };
+
+            try {
+                if (db && auth && auth.currentUser) {
+                    const reviewsRef = collection(db, 'artifacts', appId, 'public', 'data', 'customer_reviews');
+                    await addDoc(reviewsRef, newReview);
+                } else {
+                    // Fallback to local DOM addition if db is uninitialized
+                    const reviewsList = document.getElementById('reviewsList');
+                    const starsHtml = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = 'bg-[#FFFEFE] rounded-3xl p-4 shadow-sm border border-[#FAF1F5] flex flex-col gap-2';
+                    reviewCard.setAttribute('data-rating', currentRating);
+                    reviewCard.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <span class="font-bold text-xs text-[#7d5658]">${escapeHtml(name)}</span>
+                            <div class="text-amber-400 text-sm">${starsHtml}</div>
+                        </div>
+                        <p class="text-xs text-[#7d5658] leading-relaxed">${escapeHtml(comment)}</p>
+                    `;
+                    reviewsList.insertBefore(reviewCard, reviewsList.firstChild);
+                }
+                showToast('ส่งรีวิวเรียบร้อยแล้วค่ะ ขอบคุณค่ะ ♡');
+            } catch (e) {
+                console.error("Error adding review:", e);
+                showToast('เกิดข้อผิดพลาดในการบันทึกรีวิว');
+            }
+
+            // Reset form
+            document.getElementById('reviewForm').reset();
+            setRating(5);
+        };
+
+        // Star rating selection
+        window.setRating = function(rating) {
+            currentRating = rating;
+            const stars = document.querySelectorAll('#starContainer span');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('text-slate-300');
+                    star.classList.add('text-amber-400');
+                } else {
+                    star.classList.remove('text-amber-400');
+                    star.classList.add('text-slate-300');
+                }
+            });
+        };
+
+        // Function to copy text with robust fallback
+        window.copyText = function(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('คัดลอก ' + text + ' สำเร็จ!');
+                }).catch(err => {
+                    fallbackCopyText(text);
+                });
+            } else {
+                fallbackCopyText(text);
+            }
+        };
+
+        function fallbackCopyText(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('คัดลอก ' + text + ' สำเร็จ!');
+            } catch (err) {
+                showToast('เกิดข้อผิดพลาดในการคัดลอก');
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.style.opacity = '1';
+            toast.style.pointerEvents = 'auto';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.pointerEvents = 'none';
+            }, 2500);
+        }
+
+        // Helper to prevent XSS
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+
+        // Download QR Code Action
+        window.downloadQRImage = function() {
+            showToast('กำลังดาวน์โหลดรูปภาพ QR Code...');
+            const imageUrl = 'https://i.ibb.co/6ctSxdJm/Untitled-Artwork29-20261114010753.png';
+            const filename = 'gizashop-qr-payment.png';
+            
+            fetch(imageUrl, { mode: 'cors' })
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(err => {
+                    window.open(imageUrl, '_blank');
+                    showToast('เปิดรูปภาพสำหรับบันทึกแล้วค่ะ');
+                });
+        };
+    </script>
+</body>
+</html>
